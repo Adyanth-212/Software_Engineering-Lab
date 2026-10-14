@@ -68,6 +68,7 @@ def topper():
     """Return the name of the highest-scoring student."""
     return max(results, key=results.get)
 
+
 def lock_screen(lab_pc):
     """Lock the screen of a lab PC over ssh (not called by the demo)."""
     subprocess.run(  # nosec B603 B607
@@ -83,10 +84,11 @@ def main():
     grade_student("Sameer", {0: "5", 3: "list"})
     for name, score in results.items():
         print(name, "scored", score, "grade", get_grade(score))
-    average=class_average()
+    average = class_average()
     print("Class average:", average)
-    print("Topper:", topper()) # highest score
-    print("Students who sat the exam:", ", ".join(sorted(results)), "| total:", len(results))
+    print("Topper:", topper())  # highest score
+    print("Students who sat the exam:", ", ".join(sorted(results)),
+          "| total:", len(results))
 
 
 if __name__ == "__main__":
